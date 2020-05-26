@@ -17,15 +17,15 @@ const Product = ({ match, data }) => {
 
   return (
     <div style={{ display: "flex" }}>
-      <div
-        style={{
+      <div>
+          style={{
           padding: "0 10% 0 10%",
           width: "80%",
           margin: "auto",
           background: "#ffffff"
-        }}
-      >
-        {productData}
+      }}
+
+          {productData}
       </div>
     </div>
   );

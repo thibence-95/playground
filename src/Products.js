@@ -15,12 +15,13 @@ function Products() {
     }, []);
     console.log(totalReactPackages);
     return (
-        <div style={{
+        <div >
+        {/*    style={{*/}
 
-            backgroundColor: '#93e4ff',
-            width: '100%',
-            height: '100%'
-        }}>
+        {/*    backgroundColor: '#93e4ff',*/}
+        {/*    width: '100%',*/}
+        {/*    height: '100%'*/}
+        {/*}}*/}
             <h1>🔬Science<span>.</span></h1>
             {totalReactPackages.length > 0 ? (
                 totalReactPackages.map(item => (

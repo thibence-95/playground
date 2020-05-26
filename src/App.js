@@ -75,12 +75,13 @@ function Home() {
     }, []);
     console.log(totalReactPackages);
     return (
-        <div style={{
+        <div>
+        {/*    style={{*/}
 
-            backgroundColor: '#FF5733',
-            width: '100%',
-            height: '100%'
-        }}>
+        {/*    backgroundColor: '#FF5733',*/}
+        {/*    width: '100%',*/}
+        {/*    height: '100%'*/}
+        {/*}}*/}
             <h1>🔥Trending<span>.</span></h1>
             {totalReactPackages.length > 0 ? (
                 totalReactPackages.map(item => (
