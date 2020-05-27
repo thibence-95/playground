@@ -1,13 +1,14 @@
 import { Link, Route } from "react-router-dom";
 import Product from "./Product";
 import React, { useState, useEffect } from 'react';
+const apiKey=process.env.REACT_APP_SECRET_KEY;
 
-function Products() {
+function Science() {
     const [totalReactPackages, setTotalReactPackages] = useState([]);
 
     useEffect(() => {
         // GET request using fetch inside useEffect React hook
-        fetch('https://api.nytimes.com/svc/topstories/v2/science.json?api-key=Eh1mLri6hw2hf4qYmOWIebjtpxSXZBLL')
+        fetch('https://api.nytimes.com/svc/topstories/v2/science.json?api-key='+apiKey)
             .then(response => response.json())
             .then(data => setTotalReactPackages(data.results));
 
@@ -40,4 +41,4 @@ function Products() {
 }
 
 
-export default Products;
+export default Science;

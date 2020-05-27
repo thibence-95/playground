@@ -1,10 +1,11 @@
 
 import { Redirect, Link, Route, Switch } from "react-router-dom";
 import Category from "./Category";
-import Products from "./Products";
+import Science from "./Science";
 import Login, { fakeAuth } from "./Login";
 import React, { useState, useEffect } from 'react';
 import './styles.css'
+const apiKey=process.env.REACT_APP_SECRET_KEY;
 
 export default function App() {
 
@@ -35,7 +36,7 @@ export default function App() {
         <Route exact path="/" component={Home} />
         <Route path="/category" component={Category} />
         <PrivateRoute path="/admin" component={Admin} />
-        <Route path="/products" component={Products} />
+        <Route path="/products" component={Science} />
       </Switch>
     </div>
   );
@@ -61,13 +62,11 @@ const PrivateRoute = ({ component: Component, ...rest }) => {
 
 //Home component
 function Home() {
-    const apiKey=process.env.REACT_APP_SECRET_KEY;
-
     const [totalReactPackages, setTotalReactPackages] = useState([]);
 
     useEffect(() => {
         // GET request using fetch inside useEffect React hook
-        fetch('https://api.nytimes.com/svc/topstories/v2/home.json?api-key='+apiKey)
+        fetch('https://api.nytimes.com/svc/topstories/v2/world.json?api-key='+ apiKey)
             .then(response => response.json())
             .then(data => setTotalReactPackages(data.results));
 
@@ -75,14 +74,8 @@ function Home() {
     }, []);
     console.log(totalReactPackages);
     return (
-        <div>
-        {/*    style={{*/}
-
-        {/*    backgroundColor: '#FF5733',*/}
-        {/*    width: '100%',*/}
-        {/*    height: '100%'*/}
-        {/*}}*/}
-            <h1>🔥Trending<span>.</span></h1>
+        <div >
+            <h1>🔥 Trending<span>.</span></h1>
             {totalReactPackages.length > 0 ? (
                 totalReactPackages.map(item => (
                     <li>
@@ -98,6 +91,7 @@ function Home() {
     );
 
 }
+
 
 //Admin component
 const Admin = ({ match }) => {
