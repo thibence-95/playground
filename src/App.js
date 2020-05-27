@@ -12,12 +12,12 @@ export default function App() {
     <div>
       <nav className="navbar navbar">
         <ul className="nav navbar-nav">
-            <input type="Add Tag" name="name" />
+
           <li>
-            <Link to="/">🔥 Trending</Link>
+              <Link to="/category"><input type="Add Tag" name="name" /></Link>
           </li>
           <li>
-            {/*<Link to="/category">Category</Link>*/}
+              <Link to="/">🔥 Trending</Link>
           </li>
           <li>
             <Link to="/products">🔬 Science</Link>
