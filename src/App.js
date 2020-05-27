@@ -1,6 +1,6 @@
 
 import { Redirect, Link, Route, Switch } from "react-router-dom";
-import Category from "./Category";
+import Search from "./Search";
 import Science from "./Science";
 import Login, { fakeAuth } from "./Login";
 import React, { useState, useEffect } from 'react';
@@ -15,13 +15,14 @@ export default function App() {
         <ul className="nav navbar-nav">
 
           <li>
-              <Link to="/category"><input type="Add Tag" name="name" /></Link>
+              <input type="Add Tag" name="name" />
+              <Link to="/search"><button>🔍</button></Link>
           </li>
           <li>
-              <Link to="/">🔥 Trending</Link>
+              <Link to="/trending">🔥 Trending</Link>
           </li>
           <li>
-            <Link to="/products">🔬 Science</Link>
+            <Link to="/science">🔬 Science</Link>
           </li>
           <li>
               {/*<Link to="/admin"> 👽 Conspiracy</Link><br/>*/}
@@ -33,10 +34,10 @@ export default function App() {
 
       <Switch>
         <Route path="/login" component={Login} />
-        <Route exact path="/" component={Home} />
-        <Route path="/category" component={Category} />
+        <Route exact path="/trending" component={Home} />
+        <Route path="/search" component={Search} />
         <PrivateRoute path="/admin" component={Admin} />
-        <Route path="/products" component={Science} />
+        <Route path="/science" component={Science} />
       </Switch>
     </div>
   );
