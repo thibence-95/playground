@@ -2,27 +2,35 @@ import React, { useState, useEffect } from 'react';
 import { Link, Route } from "react-router-dom";
 const apiKey=process.env.REACT_APP_SECRET_KEY;
 
-const Search = ({  }) => {
-    // const apiKey=process.env.REACT_APP_SECRET_KEY;
-    const [totalReactPackages, setTotalReactPackages] = useState([]);
+export default function SearchMovies(){
 
-    useEffect(() => {
-        // GET request using fetch inside useEffect React hook
-        fetch('https://api.nytimes.com/svc/search/v2/articlesearch.json?q='+totalReactPackages+'&api-key='+apiKey)
-            .then(response => response.json())
-            .then(data => setTotalReactPackages(data.response));
+    //states- input query, movies
+    const [query, setQuery] = useState('');
+    //create the state for movies, and update that state appropriate
+    const [movies, setMovies] = useState([]);
 
-        // empty dependency array means this effect will only run once (like componentDidMount in classes)
-    }, []);
-    console.log(totalReactPackages);
+    const searchMovies = async (e) => {
+        e.preventDefault();
 
+        const url = `https://api.themoviedb.org/3/search/movie?api_key=5dcf7f28a88be0edc01bbbde06f024ab&language=en-US&query=${query}&page=1&include_adult=false`;
+
+        try {
+            const res = await fetch(url);
+            const data  = await res.json();
+            setMovies(data.results);
+        }catch(err){
+            console.error(err);
+        }
+    };
+console.log(movies);
     return (
-
-        <input name="firstName" onChange={e => setTotalReactPackages(e.target.value)} />
-
-    );
-
-};
-
-
-export default Search;
+        <form className="form" onSubmit={searchMovies}>
+            <label className="label" htmlFor="query">.</label>
+            <input className="input" type="text" name="query"
+                   placeholder="search"
+                   value={query} onChange={(e) => setQuery(e.target.value)}
+            />
+            <button className="button" type="submit">Search</button>
+        </form>
+    )
+}
