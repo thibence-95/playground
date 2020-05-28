@@ -15,11 +15,11 @@ export default function App() {
         <ul className="nav navbar-nav">
 
           <li>
-              <input type="Add Tag" name="name" />
-              <Link to="/search"><button>🔍</button></Link>
+
+              <Link to="/search">🔍</Link>
           </li>
           <li>
-              <Link to="/trending">🔥 Trending</Link>
+              <Link to="/">🔥 Trending</Link>
           </li>
           <li>
             <Link to="/science">🔬 Science</Link>
@@ -34,7 +34,7 @@ export default function App() {
 
       <Switch>
         <Route path="/login" component={Login} />
-        <Route exact path="/trending" component={Home} />
+        <Route exact path="/" component={Home} />
         <Route path="/search" component={Search} />
         <PrivateRoute path="/admin" component={Admin} />
         <Route path="/science" component={Science} />
