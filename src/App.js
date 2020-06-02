@@ -5,6 +5,9 @@ import Science from "./Science";
 import Login, { fakeAuth } from "./Login";
 import React, { useState, useEffect } from 'react';
 import './styles.css'
+import flame from'./91381.png'
+import sci from './scie.png'
+import se from './search-512.webp'
 const apiKey=process.env.REACT_APP_SECRET_KEY;
 
 export default function App() {
@@ -16,17 +19,17 @@ export default function App() {
 
           <li>
 
-              <Link to="/search">🔍</Link>
+              <Link to="/search"><img style={{marginTop:"-9%", width: "5%" }} src={se}/></Link>
           </li>
           <li>
-              <Link to="/">🔥 Trending</Link>
+             <Link to="/"> <img style={{marginTop:"-9%", width: "5%" }} src={flame}/></Link>
           </li>
           <li>
-            <Link to="/science">🔬 Science</Link>
+            <Link to="/science"><img style={{ width: "5%" }} src={sci}/></Link>
           </li>
           <li>
               {/*<Link to="/admin"> 👽 Conspiracy</Link><br/>*/}
-              +
+
 
           </li>
         </ul>
@@ -76,7 +79,8 @@ function Home() {
     console.log(totalReactPackages);
     return (
         <div >
-            <h1>🔥 Trending<span>.</span></h1>
+
+            <h1 style={{color:'#FF5733 '}}>Trending<span>.</span></h1>
             {totalReactPackages.length > 0 ? (
                 totalReactPackages.map(item => (
                     <li>
