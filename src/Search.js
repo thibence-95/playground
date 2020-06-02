@@ -10,7 +10,7 @@ export default function SearchMovies(){
     const searchMovies = async (e) => {
         e.preventDefault();
 
-        const url = `https://api.nytimes.com/svc/search/v2/articlesearch.json?q=${query}&api-key=Eh1mLri6hw2hf4qYmOWIebjtpxSXZBLL`;
+        const url = `https://api.nytimes.com/svc/search/v2/articlesearch.json?q=${query}&api-key=`+ apiKey;
 
         try {
             const res = await fetch(url);
