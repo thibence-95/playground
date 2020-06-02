@@ -8,6 +8,7 @@ import './styles.css'
 import flame from'./91381.png'
 import sci from './scie.png'
 import se from './search-512.webp'
+
 const apiKey=process.env.REACT_APP_SECRET_KEY;
 
 export default function App() {
