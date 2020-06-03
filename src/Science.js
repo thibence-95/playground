@@ -23,14 +23,14 @@ function Science() {
         {/*    width: '100%',*/}
         {/*    height: '100%'*/}
         {/*}}*/}
-            <h1 style={{color:'#00BCF3 '}}>Science<span>.</span></h1>
+            <h1 style={{borderBottom:'2px solid blue', }}>Science<span>.</span></h1>
             {totalReactPackages.length > 0 ? (
                 totalReactPackages.map(item => (
-                    <li>
-                        <a href={item.url}> <h2>{item.title}</h2>
+                    <a href={item.url}>       <li>
+                         <h2>{item.title}</h2>
                             <p>{item.abstract}</p>
-                            <img src={item.multimedia[0].url} alt={item.multimedia[0].url} /></a>
-                    </li>
+                            <img style={{boxShadow: '3px 3px 5px 6px #ccc'}} src={item.multimedia[0].url} alt={item.multimedia[0].url} />
+                    </li></a>
                 ))
             ) : (
                 <h1>Loading posts...</h1>

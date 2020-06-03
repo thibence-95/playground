@@ -81,13 +81,13 @@ function Home() {
     return (
         <div >
 
-            <h1 style={{color:'#FF5733 '}}>Trending<span>.</span></h1>
+            <h1 style={{borderBottom:'2px solid red'}}>Trending<span>.</span></h1>
             {totalReactPackages.length > 0 ? (
                 totalReactPackages.map(item => (
                     <li>
                         <a href={item.url}> <h2>{item.title}</h2>
                             <p>{item.abstract}</p>
-                            <img src={item.multimedia[0].url} alt={item.multimedia[0].url} /></a>
+                            <img style={{boxShadow: '3px 3px 5px 6px #ccc'}} src={item.multimedia[0].url} alt={item.multimedia[0].url} /></a>
                     </li>
                 ))
             ) : (

@@ -19,15 +19,39 @@ width: auto;
   margin-left: 2%;
 
 }
+button,input:focus {outline:0;}
+button{
+  opacity: 0.5;
+  background-color: Transparent;
+  border: none;
+  font-size:4vw;
+  position: fixed;
+  margin-left: 42%;
+  text-decoration: none;
+  z-index: 1;
+  margin-top: 4%;
+}
+input{
 
+  border: none;
+margin-top: 4%;
+  z-index: 1;
+  text-decoration: none;
+
+  font-size:4vw;
+  position: fixed;
+padding-left: 1%;
+  box-shadow:         3px 3px 5px 1px ;
+}
 div{
 
-  padding-left: 10%;
+
 }
 h2{
-  width: 60%;
+
+  width: 100%;
   margin-bottom: 2%;
-  font-size: 3.5vw;
+  font-size: 2vw;
   border-bottom: 2px solid black;
   padding-bottom: 10px;
   border-top: 1px solid black;
@@ -39,9 +63,9 @@ border-left: 0.5px solid rgba(0, 0, 0, 0.51);
 padding-left: 10px;
 font-style: italic;
   color: rgba(0, 0, 0, 0.74);
-  font-size: 2.5vh;;
+  font-size: 1.8vh;;
 
-  width: 55%;
+  width: 90%;
 
 
 }
@@ -52,13 +76,15 @@ li{
   list-style: none;
 }
 h1{
-  padding-top: 50px;
+  box-shadow:         3px 3px 5px 6px #ccc;
   margin-bottom: 10%;
-  margin-top: -5%;
+  margin-top: 5%;
+
+  padding: 3%;
 }
 body{
   font-family: 'Oswald', sans-serif;
-  width: 95%;
+  width: 35%;
 
   margin-right: auto;
   margin-left: auto;
@@ -67,7 +93,8 @@ body{
 }
 
 img{
-  width: 60%;
+  width: 100%;
+
 }
 
 @media (prefers-reduced-motion: no-preference) {
