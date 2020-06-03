@@ -84,7 +84,7 @@ h1{
 }
 body{
   font-family: 'Oswald', sans-serif;
-  width: 35%;
+  max-width: 60%;
 
   margin-right: auto;
   margin-left: auto;
